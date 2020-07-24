@@ -1,20 +1,38 @@
 
-import React, { useState, useEffect } from 'react';
+import React from "react"
 import axios from 'axios';
 import { BrowserRouter as Router, Route , Link } from 'react-router-dom';
 import Confirmation from "./Components/Confirmation";
-import PizzaForm from "./Components/PizzaForm";
-import * as Yup from 'yup';
+import PizzaForm from "./Components/PizzaForm"
 import HomePage from "../src/Components/HomePage";
 
-import formSchema from '../validation/formSchema';
 
 const App = () => {
+
+  
   return (
-    <>
+    <div className = "App">
+     
+     <Router>
+    <PizzaForm>
       <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
+      <Link to ="/"><button
+      className="buttonOne">Home Page</button></Link>
+    <Route exact path="/pizza">
+    
+    </Route>
+
+    <Route exact path="/pizza/confirmation">
+
+      <Confirmation/>
+
+        </Route>
+
+        <Route exact path="/"><HomePage /></Route>
+        </PizzaForm>
+    </Router>
+     
+    </div>
   );
 };
 export default App;

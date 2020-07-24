@@ -1,5 +1,7 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import * as Yup from 'yup';
+import formSchema from '../Validation/formSchema';
+import { BrowserRouter as Router, Route , Link } from 'react-router-dom';
 
 export default function Form() {
     const [pizzaForm, setPizzaForm] = useState({
@@ -17,12 +19,12 @@ export default function Form() {
         name: "",
     }
 
+
     const [disabledB, setDisabledB] = useState(true)
     console.log(disabledB)
 
     let formSchema = yup.object().shape({
         name: yup.string().required("Name must be at least 2 characters"),
-
         size: yup.string().required("Size is required!"),
         cheese: yup.string().required(),
         spinach: yup.string().required(),
