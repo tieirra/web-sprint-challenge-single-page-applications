@@ -14,7 +14,7 @@ export default function Form() {
     });
 
     const initalError = {
-        name: ""
+        name: "",
     }
 
     const [disabledB, setDisabledB] = useState(true)
@@ -78,7 +78,7 @@ export default function Form() {
 
     return (
 
-        <PizzaForm className="pizzaform" onSubmit={formSubmit} />
+        <PizzaForm className="pizzaform" onSubmit={formSubmit}>
         <label htmlFor="name" className="name">
             Name Please
  	       </label>
@@ -91,7 +91,7 @@ export default function Form() {
         />
 
  { error.name.length > 0 ? <p className="error">{error.name}</p> : null }
- 
+
     <label HTMLFor="size" className="size">
         Choice of Size
        </label>
@@ -154,7 +154,7 @@ export default function Form() {
         />
 
         <Link to="/pizzaForm/confirmation"><button className="btnOrder" disabled={disabledB}>Add To Order</button></Link>
-        <PizzaForm />
+        </PizzaForm >
    
    );
 }
